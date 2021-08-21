@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import Post from "../components/Post";
+import Post from "../components/post";
 import SEO from "../components/seo";
 
 import "../style/normalize.css";
