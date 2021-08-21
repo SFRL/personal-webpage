@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Video from "./Video";
+import Video from "./video";
 import Img from "gatsby-image";
 
 const Post = (props) => {
