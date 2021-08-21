@@ -46,8 +46,9 @@ $color-sub-base-light: #454545;
 $color-border-light: #ababab;
 $color-bg-light: #f8f8f8;
 
-$color-bg-bright-light: #EDEDED;
-$color-bg-dark-light: rgb(25,25,25);
-$color-body-font-light: #131313;
-$color-body-font-light-2: #000000;
+// TODO: actually implement lightmode, right now colours are just copied from dark-mode
+$color-bg-bright-light: #131313;
+$color-bg-dark-light: rgb(116,117,114);
+$color-body-font-light: rgb(248,247,255);
+$color-body-font-light-2: rgb(248,247,255);
 $link-color-light: rgb(48, 188, 237);

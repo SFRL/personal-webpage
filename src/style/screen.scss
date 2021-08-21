@@ -253,6 +253,18 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  .site-head-logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .site-head-logo {
+    font-size: 1rem;
+  }
+}
+
 .site-head-logo:hover {
   text-decoration: none;
 }
@@ -562,8 +574,7 @@ text.svg-title {
 
 rect.svg-title {
   fill: $color-base;
-  opacity: 80%;
-  // mix-blend-mode: overlay;
+  opacity: 0.8;
 }
 
 /* Posts without images */
