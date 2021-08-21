@@ -5,6 +5,8 @@
     color-scheme: dark light;
 }
 
+
+
 /* Fonts */
 $font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 $font-serif: 'New York', serif;
@@ -37,18 +39,17 @@ $color-bg-dark: #131313;
 $link-color: rgb(48, 188, 237);
 $color-bg-bright: rgb(116,117,114);
 $yellow: rgb(246, 209, 58);
-
 $color-primary-light: rgb(48, 188, 237);
-$color-base-light: #fff;
-// $color-base-light-inverted: #131313;
-$color-base-light-inverted: rgb(25,25,25);
-$color-sub-base-light: #454545;
-$color-border-light: #ababab;
-$color-bg-light: #f8f8f8;
 
+// Lightmode
 // TODO: actually implement lightmode, right now colours are just copied from dark-mode
-$color-bg-bright-light: #131313;
+$color-bg-light: rgb(25,25,25);
+$color-base-light-inverted: rgb(248,247,255);
+$color-bg-bright-light: rgb(25,25,25);
 $color-bg-dark-light: rgb(116,117,114);
 $color-body-font-light: rgb(248,247,255);
 $color-body-font-light-2: rgb(248,247,255);
 $link-color-light: rgb(48, 188, 237);
+$color-base-light: rgb(25,25,25);
+$color-sub-base-light: #aaa;
+$color-border-light: rgb(116,117,114);
