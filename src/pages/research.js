@@ -10,6 +10,8 @@ import "../style/all.scss";
 import SVGs from "../components/researchSVGs";
 import SVGRow from "../components/svgRow";
 
+import Video from "../components/video";
+
 const ElementsPage = (props) => {
   const siteTitle = props.data.site.siteMetadata.title + " | Research";
 
@@ -95,6 +97,11 @@ const ElementsPage = (props) => {
             SVG4={SVGs["arrow"]}
             SVG5={SVGs["goodSpeaker"]}
           />
+          <p>
+            Here is a short video that introduces a first working prototype of a
+            sketch-driven sound synthesiser.
+          </p>
+          <Video videoSrcURL={"https://www.youtube.com/embed/ca1LYn8Yy-g"} />
           <p>
             You can have a look at this{" "}
             <a

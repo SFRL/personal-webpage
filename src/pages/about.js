@@ -34,37 +34,14 @@ const AboutPage = ({ data }, location) => {
             and human computer interaction; but I am frequently involved in
             organising and managing additional projects, events and exhibitions,
             working with a variety of people across disciplines. My focus lies
-            between science/technology and art/music.
+            between science, technology, art and music.
           </p>
           <p>
-            For my undergraduate degree, I studied <b>electrical engineering</b>{" "}
-            and <b>music technology</b>, but was mainly interested in producing
-            music by the end of it. To further pursue an artistic practise, I
-            enrolled on a <b>Masters in Sonic Arts</b> at Goldsmiths University
-            of London. During this time I discovered the field of{" "}
-            <b>creative coding</b> which slowly led me back to
-            technology-focused projects. After working as a{" "}
-            <b>sound designer and electronics developer</b> for some time, I was
-            accepted into my current PhD programme that lets me combine
-            technological fields like{" "}
-            <b>
-              human computer interaction, software development and machine
-              learning with music production
-            </b>
-            .
-          </p>
-          <p>
-            Besides research, I am interested in{" "}
-            <b>working on projects that involve technology and music</b> in some
-            form especially when they have a <b>public-facing aspect</b> to
-            them. I helped organise and develop exhibitions for festivals like
-            the <b>Ars Electronica Festival</b> or the{" "}
-            <b>Edinburgh Science Festival</b>. I am also a{" "}
-            <b>skilled musician</b>, playing the piano since childhood and later
-            learned to play guitar and bass. I used to play in multiple bands
-            and went touring through Europe, but in recent year I focused on{" "}
-            <b>compositional work</b> for dance performances, film and video
-            games.
+            Please feel free to contact me if you have any questions about my
+            work, want to start a collaboration or just want to exchange ideas:
+            <br />
+            <br />
+            <b>s.lobbers[at]qmul.ac.uk</b>
           </p>
         </div>
       </article>
