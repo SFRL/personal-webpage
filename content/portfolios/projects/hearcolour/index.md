@@ -10,7 +10,7 @@ This project is part of my ongoing collaboration with <a rel="noopener noreferre
 As researchers we are interested in the associations that people have between the visual and the auditory world, but rather than only conducting lab studies we try to gain new insights from the "real-world".
 
 Concert-goers can load a web app on their phones and pick a colour that will then appear as a moving blob on a large screen on the stage. 
-It created an intruiging, interactive experience for the audience while also generating research data.
+It creates an intruiging, interactive experience for the audience while also generating research data.
 
 `youtube:https://www.youtube.com/watch?v=qS6Ze8n4j8A`
 
