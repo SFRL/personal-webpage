@@ -21,10 +21,17 @@ const ElementsPage = (props) => {
 
       <article className="post-content page-template no-image">
         <div className="post-content-body">
+          <figure className="kg-card kg-image-card">
+            <Video videoSrcURL={"https://www.youtube.com/embed/ca1LYn8Yy-g"} />
+            <figcaption className="gatsby-resp-image-figcaption">
+              The current state of my research: a first functioning sketch
+              synthesiser prototype.
+            </figcaption>
+          </figure>
           <p>
             I am a{" "}
             <a
-              href="https://epsrc.ukri.org/skills/students/centres/2013-cdt-exercise/mediaandartstechnology/UKRI"
+              href="https://webarchive.nationalarchives.gov.uk/ukgwa/20210701203432/https://epsrc.ukri.org/skills/students/centres/2013-cdt-exercise/mediaandartstechnology/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -56,7 +63,7 @@ const ElementsPage = (props) => {
             and it is routed in <b>Music Computing</b>,{" "}
             <b>Human Computer Interaction</b>, <b>Computer Vision </b>
             and <b>Human Perception and Cognition</b>. I am designing and
-            conducting <b>user studies to create a substantial dataset</b> of
+            conducting <b>user studies</b> to create a substantial dataset of
             sound-sketches and use accomplished statistical and novel{" "}
             <b>machine learning</b> methods for analysis.
           </p>
@@ -97,11 +104,7 @@ const ElementsPage = (props) => {
             SVG4={SVGs["arrow"]}
             SVG5={SVGs["goodSpeaker"]}
           />
-          <p>
-            Here is a short video that introduces a first working prototype of a
-            sketch-driven sound synthesiser.
-          </p>
-          <Video videoSrcURL={"https://www.youtube.com/embed/ca1LYn8Yy-g"} />
+
           <p>
             You can have a look at this{" "}
             <a
@@ -118,6 +121,18 @@ const ElementsPage = (props) => {
 
           <h3>Publications</h3>
           <ul>
+            <li>
+              <a
+                href={props.data.dmrn16.publicURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sketching Sounds: Using sound-shape associations to build a
+                sketch- based sound synthesiser
+              </a>{" "}
+              - research overview presented at the Digital Music Research
+              Network (DMRN) workshop in 2021
+            </li>
             <li>
               <a
                 href={props.data.icmc21.publicURL}
@@ -159,6 +174,9 @@ const indexQuery = graphql`
       publicURL
     }
     icmpc21: file(relativePath: { eq: "Lobbers530.jpeg" }) {
+      publicURL
+    }
+    dmrn16: file(relativePath: { eq: "DMRN16-Sketching_Sounds.pdf" }) {
       publicURL
     }
   }
