@@ -17,7 +17,7 @@ I set myself the challenge to complete the project within a week organised as a 
 - **build prototype** in React.js, p5.js and WebGL
 - **test prototype** on different devices and conduct **quick & dirty** evaluation with friends and colleagues
 - organise mock performance with **focus group** of ~10 participants to evaluate improved prototype in action 
-- implement feedback and code **simulation of 100 users** to test finished web app
+- implement feedback and code **simulation of 100 users** to test finished webapp
 - write documentation and upload to <a rel="noopener noreferrer" target="_blank" href="https://github.com/SFRL/hearing-colour-app">GitHub</a>
 
 The event was a full success with close to 100 visitors. I managed to complete all planned steps in time, reassuring myself that I can quickly deliver a project if needed.
