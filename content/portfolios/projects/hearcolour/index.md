@@ -12,13 +12,13 @@ This project is part of my ongoing collaboration with <a rel="noopener noreferre
 
 I set myself the challenge to complete the project within a week organised as a design sprint that followed these steps:
 
-- define the performance setup and explore different interaction approaches
-- create a few paper prototype, discuss with collaborators and decide on approach (I ended up using a similar design to "press and hold button to confirm" that is used in some PlayStation games)
-- build a prototype in React.js, p5.js and WebGL
-- test prototype on different devices and conduct quick & dirty evaluation with friends and colleagues
-- organise mock performance with focus group of ~10 participants to evaluate improved prototype in action 
-- implement feedback and code simulation of 100 users to test finished web app
+- define the performance setup and **explore different approaches**
+- create paper prototypes, discuss with collaborators and **decide on approach** (I ended up using a similar design to "press and hold button to confirm" that is used in some PlayStation games)
+- **build prototype** in React.js, p5.js and WebGL
+- **test prototype** on different devices and conduct **quick & dirty** evaluation with friends and colleagues
+- organise mock performance with **focus group** of ~10 participants to evaluate improved prototype in action 
+- implement feedback and code **simulation of 100 users** to test finished web app
 - write documentation and upload to <a rel="noopener noreferrer" target="_blank" href="https://github.com/SFRL/hearing-colour-app">GitHub</a>
 
-The event was a full success with close to 100 visitors. I managed to complete all planned steps in time, reassuring myself that I can deliver a project in a short time if required.
+The event was a full success with close to 100 visitors. I managed to complete all planned steps in time, reassuring myself that I can quickly deliver a project if needed.
 
