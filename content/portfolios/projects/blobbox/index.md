@@ -16,4 +16,4 @@ While this is a quirky demonstration without a real-life application in mind, it
 
 You can see a large change in design between the video and the image above. Testing the *Blobbox* with different people made me realise that the original design was only accessible for users of a specific height. The new design proved to be a lot more flexible and was enjoyed by children and fully-grown adults at the <a rel="noopener noreferrer" target="_blank" href="https://ars.electronica.art/outofthebox/en/">Ars Electronica Festival 2019</a> and <a rel="noopener noreferrer" target="_blank" href="https://www.peckhamdigital.org/">Peckham Digital 2021</a>.
 
-![A festival visitor interacting with the Blobbox](./blobbox_live.png "Blobbox in action at Ars Electronica Festival 2019.")
+![A festival visitor interacting with the Blobbox](./blobboxlive.png "Blobbox in action at Ars Electronica Festival 2019.")
