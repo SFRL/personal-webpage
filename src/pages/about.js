@@ -33,8 +33,7 @@ const AboutPage = ({ data }, location) => {
             the Centre for Digital Music (C4DM) with focus on Music Technology
             and human computer interaction; but I am frequently involved in
             organising and managing additional projects, events and exhibitions,
-            working with a variety of people across disciplines. My focus lies
-            between science, technology, art and music.
+            working with a variety of people across disciplines.
           </p>
           <p>
             Please feel free to contact me if you have any questions about my
