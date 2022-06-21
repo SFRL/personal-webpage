@@ -35,9 +35,11 @@ const Post = (props) => {
 
   const media = getMedia(props.node.frontmatter);
 
+  const postId = `${props.node.frontmatter.title}`.replace(/[^a-zA-Z0-9]/g, "");
+
   return (
     <>
-      <article className="post-content page-template no-image">
+      <article className="post-content page-template no-image" id={postId}>
         <div className="post-content-body">
           <h2>{props.node.frontmatter.title}</h2>
           <p>{props.node.frontmatter.description}</p>

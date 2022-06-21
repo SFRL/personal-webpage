@@ -123,12 +123,24 @@ const ElementsPage = (props) => {
           <ul>
             <li>
               <a
+                href={props.data.icmc22.publicURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Seeing Sounds, Hearing Shapes: a gamified study to evaluate
+                sound-sketches
+              </a>{" "}
+              - paper presented at the International Computer Music Conference
+              (ICMC) in 2022
+            </li>
+            <li>
+              <a
                 href={props.data.dmrn16.publicURL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Sketching Sounds: Using sound-shape associations to build a
-                sketch- based sound synthesiser
+                sketch-based sound synthesiser
               </a>{" "}
               - research overview presented at the Digital Music Research
               Network (DMRN) workshop in 2021
@@ -171,6 +183,9 @@ const indexQuery = graphql`
       }
     }
     icmc21: file(relativePath: { eq: "ICMC_Paper_2021.pdf" }) {
+      publicURL
+    }
+    icmc22: file(relativePath: { eq: "ICMC_Paper_2022.pdf" }) {
       publicURL
     }
     icmpc21: file(relativePath: { eq: "Lobbers530.jpeg" }) {
