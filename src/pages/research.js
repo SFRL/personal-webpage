@@ -123,6 +123,16 @@ const ElementsPage = (props) => {
           <ul>
             <li>
               <a
+                href={props.data.evomusart23.publicURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SketchSynth: cross-modal control of sound synthesis
+              </a>{" "}
+              - paper accepted at the EvoMUSART conference in 2023
+            </li>
+            <li>
+              <a
                 href={props.data.icmc22.publicURL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -130,8 +140,7 @@ const ElementsPage = (props) => {
                 Seeing Sounds, Hearing Shapes: a gamified study to evaluate
                 sound-sketches
               </a>{" "}
-              - paper presented at the International Computer Music Conference
-              (ICMC) in 2022
+              - paper presented at the International Computer Music Conference (ICMC) in 2022
             </li>
             <li>
               <a
@@ -181,6 +190,11 @@ const indexQuery = graphql`
       siteMetadata {
         title
       }
+    }
+    evomusart23: file(
+      relativePath: { eq: "SketchSynth_cross-modal_control_of_sound_synthesis.pdf" }
+    ) {
+      publicURL
     }
     icmc21: file(relativePath: { eq: "ICMC_Paper_2021.pdf" }) {
       publicURL
