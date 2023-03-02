@@ -123,6 +123,19 @@ const ElementsPage = (props) => {
           <ul>
             <li>
               <a
+                href={props.data.chi23.publicURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AI as mediator between composers, sound designers, and creative
+                media producers
+              </a>{" "}
+              - position paper accepted at Integrating AI in Human-Human
+              Collaborative Ideation workshop at the ACM CHI Conference on Human
+              Factors in Computing System in 2023
+            </li>
+            <li>
+              <a
                 href={props.data.evomusart23.publicURL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -140,7 +153,8 @@ const ElementsPage = (props) => {
                 Seeing Sounds, Hearing Shapes: a gamified study to evaluate
                 sound-sketches
               </a>{" "}
-              - paper presented at the International Computer Music Conference (ICMC) in 2022
+              - paper presented at the International Computer Music Conference
+              (ICMC) in 2022
             </li>
             <li>
               <a
@@ -190,6 +204,11 @@ const indexQuery = graphql`
       siteMetadata {
         title
       }
+    }
+    chi23: file(
+      relativePath: { eq: "CHI2023_Workshop_paper.pdf"}
+    ) {
+      publicURL
     }
     evomusart23: file(
       relativePath: { eq: "SketchSynth_cross-modal_control_of_sound_synthesis.pdf" }
