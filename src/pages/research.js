@@ -178,28 +178,6 @@ const indexQuery = graphql`
         id
       }
     }
-    chi23: file(relativePath: { eq: "CHI2023_Workshop_paper.pdf" }) {
-      publicURL
-    }
-    evomusart23: file(
-      relativePath: {
-        eq: "SketchSynth_cross-modal_control_of_sound_synthesis.pdf"
-      }
-    ) {
-      publicURL
-    }
-    icmc21: file(relativePath: { eq: "ICMC_Paper_2021.pdf" }) {
-      publicURL
-    }
-    icmc22: file(relativePath: { eq: "ICMC_Paper_2022.pdf" }) {
-      publicURL
-    }
-    icmpc21: file(relativePath: { eq: "Lobbers530.jpeg" }) {
-      publicURL
-    }
-    dmrn16: file(relativePath: { eq: "DMRN16-Sketching_Sounds.pdf" }) {
-      publicURL
-    }
   }
 `;
 
