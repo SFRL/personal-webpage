@@ -2,29 +2,13 @@ import React, { useState } from "react";
 import Video from "./video";
 import Img from "gatsby-image";
 
-const Post = (props) => {
-  const [showContent, setShowContent] = useState(false);
-
-  const content = (
-    <div dangerouslySetInnerHTML={{ __html: props.node.html }}></div>
-  );
-
-  const button = (
-    <button
-      onClick={() => setShowContent(!showContent)}
-      className="button primary"
-    >
-      {showContent ? "Show less" : "Show more"}
-    </button>
-  );
-
   const getMedia = (frontmatter) => {
     if (frontmatter.videoSourceURL) {
       return <Video videoSrcURL={frontmatter.videoSourceURL} />;
     } else if (frontmatter.thumbnail) {
       return (
         <Img
-          fluid={props.node.frontmatter.thumbnail.childImageSharp.fluid}
+          fluid={frontmatter.thumbnail.childImageSharp.fluid}
           className="kg-image"
         />
       );
@@ -33,9 +17,33 @@ const Post = (props) => {
     }
   };
 
+const Post = (props) => {
+  const [showContent, setShowContent] = useState(false);
+
   const media = getMedia(props.node.frontmatter);
 
-  const postId = `${props.node.frontmatter.title}`.replace(/[^a-zA-Z0-9]/g, "");
+  const postId = `${props.node.frontmatter.title}`.replace(
+      /[^a-zA-Z0-9]/g,
+      ""
+    );
+
+  const content = (
+    <div dangerouslySetInnerHTML={{ __html: props.node.html }}></div>
+  );
+
+  const button = (
+    <button onClick={() => setShowContent(!showContent)} className="button">
+      {showContent ? (
+        <a href={`#${postId}`}>Show less</a>
+      ) : (
+        <a href={`#${postId}`}>Show more</a>
+      )}
+    </button>
+  );
+
+
+
+
 
   return (
     <>

@@ -30,14 +30,14 @@ const AboutPage = ({ data }, location) => {
               collaboration
             </b>
             . My current main occupation is UKRI funded <b>PhD research</b> at
-            the Centre for Digital Music (C4DM) with focus on Music Technology
+            the Centre for Digital Music (C4DM) with a focus on Music Technology
             and human computer interaction; but I am frequently involved in
             organising and managing additional projects, events and exhibitions,
             working with a variety of people across disciplines.
           </p>
           <p>
             Please feel free to contact me if you have any questions about my
-            work, want to start a collaboration or just want to exchange ideas:
+            work, want to collaborate or just want to exchange ideas:
             <br />
             <br />
             <b>s.lobbers[at]qmul.ac.uk</b>
