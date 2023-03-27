@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { graphql, StaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
+import Publication from "../components/publication";
 import SEO from "../components/seo";
 
 import "../style/normalize.css";
 import "../style/all.scss";
+
+
 
 import SVGs from "../components/researchSVGs";
 import SVGRow from "../components/svgRow";
@@ -14,6 +17,21 @@ import Video from "../components/video";
 
 const ElementsPage = (props) => {
   const siteTitle = props.data.site.siteMetadata.title + " | Research";
+
+  useEffect(() => console.log(props.data));
+
+  const publications = props.data.publications.nodes.map((node) => (
+      <Publication 
+        key={node.id} 
+        type={node.frontmatter.type} 
+        title={node.frontmatter.title}
+        authors={node.frontmatter.authors}
+        in={node.frontmatter.in}
+        date={node.frontmatter.date}
+        link={node.frontmatter.link}
+        asset={node.frontmatter.asset.publicURL}
+      />
+  ));
 
   return (
     <Layout title={siteTitle}>
@@ -119,85 +137,15 @@ const ElementsPage = (props) => {
           <figure className="kg-card kg-image-card">
             <Video videoSrcURL={"https://www.youtube.com/embed/4Yzv2rgTgOE"} />
             <figcaption className="gatsby-resp-image-figcaption">
-              Demonstration of the latest implementation of the sketch-control synthesiser called: SketchSynth.
+              Demonstration of the latest implementation of the sketch-control
+              synthesiser called: SketchSynth.
             </figcaption>
           </figure>
 
           <hr />
 
           <h3>Publications</h3>
-          <ul>
-            <li>
-              <a
-                href={props.data.chi23.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                AI as mediator between composers, sound designers, and creative
-                media producers
-              </a>{" "}
-              - position paper accepted at Integrating AI in Human-Human
-              Collaborative Ideation workshop at the ACM CHI Conference on Human
-              Factors in Computing System in 2023
-            </li>
-            <li>
-              <a
-                href={props.data.evomusart23.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                SketchSynth: cross-modal control of sound synthesis
-              </a>{" "}
-              - paper accepted at the EvoMUSART conference in 2023
-            </li>
-            <li>
-              <a
-                href={props.data.icmc22.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Seeing Sounds, Hearing Shapes: a gamified study to evaluate
-                sound-sketches
-              </a>{" "}
-              - paper presented at the International Computer Music Conference
-              (ICMC) in 2022
-            </li>
-            <li>
-              <a
-                href={props.data.dmrn16.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sketching Sounds: Using sound-shape associations to build a
-                sketch-based sound synthesiser
-              </a>{" "}
-              - research overview presented at the Digital Music Research
-              Network (DMRN) workshop in 2021
-            </li>
-            <li>
-              <a
-                href={props.data.icmc21.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sketching Sounds: an exploratory study on sound-shape
-                associations
-              </a>{" "}
-              - paper presented at the International Computer Music Conference
-              (ICMC) in 2021
-            </li>
-            <li>
-              <a
-                href={props.data.icmpc21.publicURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Representation of musical timbre through visual sketching
-              </a>{" "}
-              - poster presented at the International Conference for Music
-              Perception and Cognition (ICMPC) in 2021
-            </li>
-          </ul>
+          {publications}
         </div>
       </article>
     </Layout>
@@ -211,13 +159,32 @@ const indexQuery = graphql`
         title
       }
     }
-    chi23: file(
-      relativePath: { eq: "CHI2023_Workshop_paper.pdf"}
+    publications: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(publications)/" } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
+      nodes {
+        frontmatter {
+          type
+          title
+          authors
+          date(formatString: "MMMM YYYY")
+          in
+          link
+          asset {
+            publicURL
+          }
+        }
+        id
+      }
+    }
+    chi23: file(relativePath: { eq: "CHI2023_Workshop_paper.pdf" }) {
       publicURL
     }
     evomusart23: file(
-      relativePath: { eq: "SketchSynth_cross-modal_control_of_sound_synthesis.pdf" }
+      relativePath: {
+        eq: "SketchSynth_cross-modal_control_of_sound_synthesis.pdf"
+      }
     ) {
       publicURL
     }
