@@ -55,41 +55,42 @@
     width: 100%;
 }
 
-@media (max-width: $xsmall) {
-    .actions:not(.fixed) {
-        flex-direction: column;
-        margin-left: 0;
-        width: 100% !important;
-    }
+// Uncomment if lists should be centered and full width on mobile
+// @media (max-width: $xsmall) {
+//     .actions:not(.fixed) {
+//         flex-direction: column;
+//         margin-left: 0;
+//         width: 100% !important;
+//     }
 
-    .actions:not(.fixed) li {
-        flex: 1 1 auto;
-        padding: calc(#{$margin} * 0.5) 0 0 0;
-        text-align: center;
-        width: 100%;
-    }
+//     .actions:not(.fixed) li {
+//         flex: 1 1 auto;
+//         padding: calc(#{$margin} * 0.5) 0 0 0;
+//         text-align: center;
+//         width: 100%;
+//     }
 
-    .actions:not(.fixed) li > * {
-        width: 100%;
-    }
+//     .actions:not(.fixed) li > * {
+//         width: 100%;
+//     }
 
-    .actions:not(.fixed) li:first-child {
-        padding-top: 0;
-    }
+//     .actions:not(.fixed) li:first-child {
+//         padding-top: 0;
+//     }
 
-    .actions:not(.fixed) li input[type="submit"],
-    .actions:not(.fixed) li input[type="reset"],
-    .actions:not(.fixed) li input[type="button"],
-    .actions:not(.fixed) li button,
-    .actions:not(.fixed) li .button {
-        width: 100%;
-    }
+//     .actions:not(.fixed) li input[type="submit"],
+//     .actions:not(.fixed) li input[type="reset"],
+//     .actions:not(.fixed) li input[type="button"],
+//     .actions:not(.fixed) li button,
+//     .actions:not(.fixed) li .button {
+//         width: 100%;
+//     }
 
-    .actions:not(.fixed) li input[type="submit"].icon:before,
-    .actions:not(.fixed) li input[type="reset"].icon:before,
-    .actions:not(.fixed) li input[type="button"].icon:before,
-    .actions:not(.fixed) li button.icon:before,
-    .actions:not(.fixed) li .button.icon:before {
-        margin-left: -0.5rem;
-    }
-}
+//     .actions:not(.fixed) li input[type="submit"].icon:before,
+//     .actions:not(.fixed) li input[type="reset"].icon:before,
+//     .actions:not(.fixed) li input[type="button"].icon:before,
+//     .actions:not(.fixed) li button.icon:before,
+//     .actions:not(.fixed) li .button.icon:before {
+//         margin-left: -0.5rem;
+//     }
+// }
