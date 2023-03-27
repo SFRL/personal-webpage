@@ -24,8 +24,7 @@ const ElementsPage = (props) => {
           <figure className="kg-card kg-image-card">
             <Video videoSrcURL={"https://www.youtube.com/embed/ca1LYn8Yy-g"} />
             <figcaption className="gatsby-resp-image-figcaption">
-              The current state of my research: a first functioning sketch
-              synthesiser prototype.
+              Short video introduction to my research.
             </figcaption>
           </figure>
           <p>
@@ -116,6 +115,13 @@ const ElementsPage = (props) => {
             </a>{" "}
             for more detailed information or check out my publications.
           </p>
+
+          <figure className="kg-card kg-image-card">
+            <Video videoSrcURL={"https://www.youtube.com/embed/4Yzv2rgTgOE"} />
+            <figcaption className="gatsby-resp-image-figcaption">
+              Demonstration of the latest implementation of the sketch-control synthesiser called: SketchSynth.
+            </figcaption>
+          </figure>
 
           <hr />
 
