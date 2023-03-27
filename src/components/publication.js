@@ -40,6 +40,7 @@ const Publication = (props) => {
           </a>
             </li>
         </ul>
+        <hr/>
         </div>
       </div>
     );
