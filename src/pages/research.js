@@ -1,26 +1,47 @@
-import React, {useEffect} from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import { graphql, useStaticQuery} from "gatsby";
 
 import Layout from "../components/layout";
 import Publication from "../components/publication";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import "../style/normalize.css";
 import "../style/all.scss";
-
-
 
 import SVGs from "../components/researchSVGs";
 import SVGRow from "../components/svgRow";
 
 import Video from "../components/video";
 
-const ElementsPage = (props) => {
-  const siteTitle = props.data.site.siteMetadata.title + " | Research";
+const indexQuery = graphql`
+  query {
+    publications: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(publications)/" } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          type
+          title
+          authors
+          date(formatString: "MMMM YYYY")
+          in
+          link
+          asset {
+            publicURL
+          }
+        }
+        id
+      }
+    }
+  }
+`;
 
-  useEffect(() => console.log(props.data));
+const ElementsPage = () => {
+  const pageTitle = "Research";
+  const data = useStaticQuery(indexQuery);
 
-  const publications = props.data.publications.nodes.map((node) => (
+  const publications = data.publications.nodes.map((node) => (
       <Publication 
         key={node.id} 
         type={node.frontmatter.type} 
@@ -34,8 +55,8 @@ const ElementsPage = (props) => {
   ));
 
   return (
-    <Layout title={siteTitle}>
-      <SEO title="Research" />
+    <Layout title={pageTitle}>
+      <Seo title="Research" />
 
       <article className="post-content page-template no-image">
         <div className="post-content-body">
@@ -152,40 +173,4 @@ const ElementsPage = (props) => {
   );
 };
 
-const indexQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    publications: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(publications)/" } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        frontmatter {
-          type
-          title
-          authors
-          date(formatString: "MMMM YYYY")
-          in
-          link
-          asset {
-            publicURL
-          }
-        }
-        id
-      }
-    }
-  }
-`;
-
-export default (props) => (
-  <StaticQuery
-    query={indexQuery}
-    render={(data) => (
-      <ElementsPage location={props.location} data={data} {...props} />
-    )}
-  />
-);
+export default ElementsPage;

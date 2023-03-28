@@ -1,17 +1,72 @@
 import React from "react";
-import { Link } from "gatsby";
+import {graphql, useStaticQuery, Link } from "gatsby";
 import {
   faGithub,
   faLinkedin,
   faTwitter,
   faSoundcloud,
 } from "@fortawesome/free-brands-svg-icons";
+import Typing from "../components/typing";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// library.add(fas);
+
+const indexQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+  }
+`;
+
+const navItems = [
+  {
+    name: "Research",
+    link: "/research",
+  },
+  {
+    name: "Projects",
+    link: "/projects",
+  },
+  {
+    name: "Music",
+    link: "/music",
+  },
+  {
+    name: "About",
+    link: "/about",
+  }
+];
+
+const socialItems = [
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/sebastianlobbers/",
+    icon: faLinkedin,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/9SFRL2",
+    icon: faTwitter,
+  },
+  {
+    name: "Github",
+    link: "https://github.com/SFRL",
+    icon: faGithub,
+  },
+  {
+    name: "Soundcloud",
+    link: "https://soundcloud.com/sebastian-l-bbers",
+    icon: faSoundcloud,
+  },
+];
 
 const Layout = (props) => {
-  const { title, children } = props;
+  const data = useStaticQuery(indexQuery);
+  const author = data.site.siteMetadata.author;
+  const { title, children} = props;
   const [toggleNav, setToggleNav] = React.useState(false);
   return (
     <div
@@ -22,9 +77,7 @@ const Layout = (props) => {
         <div className="site-head-container">
           <button
             className="nav-burger"
-            // to={`/#menu`}
             onClick={() => setToggleNav(!toggleNav)}
-            // state={{ typedCompleted: true }}
           >
             <div
               className="hamburger hamburger--collapse"
@@ -40,11 +93,12 @@ const Layout = (props) => {
           </button>
           <nav id="swup" className="site-head-left">
             <div className="social-links">
-              <Link to={`/`} state={{ typedCompleted: true }}>
-                Home
-              </Link>
-
-              <Link to={`/about`}>About</Link>
+              {navItems.map((item) => (
+                item.name !== title ? (
+                <Link key={item.name} to={item.link} state={{ typedCompleted: true }}>
+                  {item.name}
+                </Link> ) : undefined
+              ))}
             </div>
           </nav>
           <div className="site-head-center">
@@ -53,45 +107,28 @@ const Layout = (props) => {
               className="site-head-logo"
               state={{ typedCompleted: true }}
             >
-              {title}
+              {data.site.siteMetadata.title}
             </Link>
+            {title ? (
+              <span className="site-head-logo">
+                <Typing words={[title]}/>
+              </span>
+            ) : undefined}
           </div>
 
           <div className="site-head-right ">
             <div className="social-links">
-              <a
-                href="https://www.linkedin.com/in/sebastianlobbers/"
-                title="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a
-                href="https://twitter.com/9SFRL2"
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                href="https://soundcloud.com/sebastian-l-bbers"
-                title="soundcloud"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faSoundcloud} />
-              </a>
-
-              <a
-                href="https://github.com/SFRL"
-                title="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
+              {socialItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.link}
+                  title={item.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={item.icon} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -102,7 +139,7 @@ const Layout = (props) => {
         </div>
       </main>
       <footer className="site-foot">
-        &copy; {new Date().getFullYear()} {title.split(" |")[0]} &mdash; Built
+        &copy; {new Date().getFullYear()} {author} &mdash; Built
         with{" "}
         <a
           href="https://gatsbyjs.org"

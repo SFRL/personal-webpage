@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import Post from "../components/post";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import "../style/normalize.css";
 import "../style/all.scss";
@@ -13,11 +13,10 @@ const PortfolioTemplate = (props) => {
 
   const data = props.data;
   const title = capitalise(props.pageContext.title);
-  const siteTitle = data.site.siteMetadata.title + " | " + title;
   const posts = data.allMarkdownRemark.edges;
   return (
-    <Layout title={siteTitle}>
-      <SEO title={title} />
+    <Layout title={title}>
+      <Seo title={title} />
       {posts.map(({ node }) => {
         return <Post key={node.fields.slug} node={node} />;
       })}
@@ -37,7 +36,7 @@ export const indexQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: $regex } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -53,9 +52,11 @@ export const indexQuery = graphql`
             videoSourceURL
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 1360
+                  placeholder: BLURRED
+                )
               }
             }
           }

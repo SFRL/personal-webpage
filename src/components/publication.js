@@ -4,7 +4,7 @@ import "../style/all.scss";
 const Publication = (props) => {
 
     return (
-      <div className="row">
+      <div className="row bottom-margin">
         <div className="col-2">
           <span className="tag">{props.type}</span>
         </div>
@@ -18,29 +18,28 @@ const Publication = (props) => {
             <br />
             <i>In {props.in}</i> &mdash; {props.date}
           </p>
-        <ul className="actions">
+          <ul className="actions">
             <li>
-          <a
-            className="button"
-            href={props.asset}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download
-          </a>
-          </li>
-            <li>
-          <a
-            className="button"
-            href={props.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Official publication
-          </a>
+              <a
+                className="button"
+                href={props.asset}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download
+              </a>
             </li>
-        </ul>
-        <hr/>
+            <li>
+              <a
+                className="button"
+                href={props.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official publication
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     );

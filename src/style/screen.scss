@@ -54,6 +54,10 @@ body {
 /* Layout
 /* ---------------------------------------------------------- */
 
+.bottom-margin {
+  margin-bottom: 4rem;
+}
+
 .site-wrapper {
   display: flex;
   flex-direction: column;
@@ -234,13 +238,14 @@ body {
 .site-head-center {
   // position: absolute;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
 .site-head-logo {
   flex-shrink: 0;
   display: block;
-  // padding: 10px;
+  padding: 0 10px;
   color: $color-body-font;
   font-size: 2.1rem;
   line-height: 1em;
@@ -254,16 +259,14 @@ body {
   }
 }
 
-@media (max-width: 500px) {
-  .site-head-logo {
-    font-size: 1.5rem;
+@media (min-width: $medium) {
+  span.site-head-logo {
+      border-left: $color-body-font 2px solid;
   }
 }
 
-@media (max-width: 350px) {
-  .site-head-logo {
-    font-size: 1rem;
-  }
+span.site-head-logo {
+  display: block;
 }
 
 .site-head-logo:hover {
@@ -335,7 +338,7 @@ body {
   color: 0;
 }
 
-@media (max-width: 850px) {
+@media (max-width: $medium) {
   .site-head {
     padding: 0;
   }
@@ -347,7 +350,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 12px;
-    height: 40px;
+    height: 7em;
     background: rgba(255, 255, 255, 0);
     z-index: -1;
     transition: all 0.4s ease-out;
@@ -393,12 +396,24 @@ body {
     margin-top: 4vw;
   }
   .site-head-center {
+    flex-direction: column;
     order: 1;
-    position: static;
-    z-index: auto;
     display: flex;
-    justify-content: left;
-    // width: 186px;
+    justify-content: center;
+  }
+  .site-head-logo {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+  span.site-head-logo {
+    border-top: $color-body-font 2px solid;
+  }
+  // Add space so that text is centered with typing effect
+  span.site-head-logo:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
   }
   .site-head-right {
     order: 3;
@@ -455,6 +470,13 @@ body {
   }
 }
 
+@media (max-width: $small) {
+  .site-head-logo {
+    font-size: 1.2em;
+  }
+}
+
+
 /* Post Feed
 /* ---------------------------------------------------------- */
 
@@ -478,16 +500,28 @@ body {
   overflow: hidden;
   counter-increment: posts;
 }
-@media (max-width: 1300px) {
+@media (max-width: $large) {
   .post-card {
     height: 300px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: $medium) {
   .post-card {
     flex: 1 1 100%;
     max-width: 500px;
     height: 400px;
+  }
+}
+
+@media (max-width: $xsmall) {
+  .post-feed {
+    display: block;
+    width: 100vw;
+    margin-left: -6vw;
+  }
+  .post-card {
+    max-width: $small;
+    height: 100vw;
   }
 }
 
@@ -541,7 +575,7 @@ body {
   opacity: 0;
   background: rgba(255, 255, 255, 0.3);
 }
-@media (max-width: 700px) {
+@media (max-width: $small) {
   .post-card.with-image .post-card-content {
     opacity: 1;
   }
@@ -808,6 +842,13 @@ article.post-content {
 hr {
   max-width: 800px;
   margin: 5rem auto;
+}
+// make full width on mobile
+@media (max-width: $small) {
+  hr {
+    margin-left: -6vw;
+    width: 100vw;
+  }
 }
 
 .footnotes-sep {

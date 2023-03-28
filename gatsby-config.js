@@ -1,4 +1,7 @@
-const urljoin = require("url-join");
+// import urlJoin from "url-join";
+
+// const urljoin = require("url-join");
+// const urlJoin = import("url-join");
 const siteConfig = require("./siteConfig");
 
 module.exports = {
@@ -6,18 +9,28 @@ module.exports = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl: siteConfig.url + siteConfig.prefix,
     social: {
       twitter: siteConfig.twitter,
     },
   },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/home`,
         name: `home`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/about`,
+        name: `about`,
       },
     },
     {
@@ -34,14 +47,6 @@ module.exports = {
         name: `portfolios`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -65,7 +70,7 @@ module.exports = {
               withWebp: true,
               showCaptions: true,
               quality: 75,
-              wrapperStyle: `margin: 2em 0;`,
+              wrapperStyle: `margin-top: 2em; margin-bottom: 2em;`,
             },
           },
           {
@@ -78,9 +83,6 @@ module.exports = {
         ],
       },
     },
-
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
@@ -103,7 +105,6 @@ module.exports = {
         purgeOnly: ["components/", "/main.css", "bootstrap/"], // Purge only these files/folders
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -116,7 +117,6 @@ module.exports = {
         icon: `content/home/projects/blobs.png`,
       },
     },
-    // `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",

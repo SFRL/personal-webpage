@@ -12,7 +12,6 @@ class Tags extends Component {
             <span key={tag}>
             <Link className="post-card-tag-link"
             key={tag}
-            // style={{ textDecoration: "none" }}
             to={`/tags/${_.kebabCase(tag)}`}
             >
             #{tag}

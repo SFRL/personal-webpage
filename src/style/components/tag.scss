@@ -1,6 +1,5 @@
 .tag {
     display: inline-block;
-    width: 100%;
     padding: 0 2rem;
     border: 0;
     background-color: $color-primary;
@@ -12,4 +11,11 @@
     text-align: center;
     text-decoration: none;
     appearance: none;
+}
+
+
+@media (min-width: $small) {
+  .tag{
+    width: 100%;
+  }
 }
