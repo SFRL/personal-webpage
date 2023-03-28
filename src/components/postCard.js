@@ -66,9 +66,7 @@ class ContentWithImage extends Component {
     return (
       <Link to={props.node.fields.slug} className="post-card-link">
         <div className="post-card-content">
-          {/* <div className="post-card-title"> */}
           <CutoutText text={text} id={`${text}1`} />
-          {/* </div> */}
         </div>
       </Link>
     );

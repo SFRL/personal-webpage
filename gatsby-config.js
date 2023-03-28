@@ -16,6 +16,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -80,9 +83,6 @@ module.exports = {
         ],
       },
     },
-
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
@@ -117,7 +117,6 @@ module.exports = {
         icon: `content/home/projects/blobs.png`,
       },
     },
-    // `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",

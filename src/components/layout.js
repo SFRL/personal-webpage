@@ -15,6 +15,7 @@ const indexQuery = graphql`
     site {
       siteMetadata {
         title
+        author
       }
     }
   }
@@ -64,7 +65,8 @@ const socialItems = [
 
 const Layout = (props) => {
   const data = useStaticQuery(indexQuery);
-  const { title, children } = props;
+  const author = data.site.siteMetadata.author;
+  const { title, children} = props;
   const [toggleNav, setToggleNav] = React.useState(false);
   return (
     <div
@@ -137,7 +139,7 @@ const Layout = (props) => {
         </div>
       </main>
       <footer className="site-foot">
-        &copy; {new Date().getFullYear()} {title.split(" |")[0]} &mdash; Built
+        &copy; {new Date().getFullYear()} {author} &mdash; Built
         with{" "}
         <a
           href="https://gatsbyjs.org"

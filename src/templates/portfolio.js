@@ -36,7 +36,7 @@ export const indexQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: $regex } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -52,9 +52,11 @@ export const indexQuery = graphql`
             videoSourceURL
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 1360
+                  placeholder: BLURRED
+                )
               }
             }
           }

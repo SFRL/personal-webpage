@@ -8,8 +8,6 @@ import Seo from "../components/seo";
 import "../style/normalize.css";
 import "../style/all.scss";
 
-
-
 import SVGs from "../components/researchSVGs";
 import SVGRow from "../components/svgRow";
 
@@ -19,7 +17,7 @@ const indexQuery = graphql`
   query {
     publications: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(publications)/" } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         frontmatter {

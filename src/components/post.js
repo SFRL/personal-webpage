@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Video from "./video";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
   const getMedia = (frontmatter) => {
     if (frontmatter.videoSourceURL) {
       return <Video videoSrcURL={frontmatter.videoSourceURL} />;
     } else if (frontmatter.thumbnail) {
       return (
-        <Img
-          fluid={frontmatter.thumbnail.childImageSharp.fluid}
+        <GatsbyImage 
+          image={frontmatter.thumbnail.childImageSharp.gatsbyImageData}
           className="kg-image"
         />
       );
@@ -31,14 +31,18 @@ const Post = (props) => {
     <div dangerouslySetInnerHTML={{ __html: props.node.html }}></div>
   );
 
-  const button = (
+  const button = showContent ? (
+    <a href={`#${postId}`}>
+      <button onClick={() => setShowContent(!showContent)} className="button">
+        Show less
+      </button>
+    </a>
+  ) : (
     <button onClick={() => setShowContent(!showContent)} className="button">
-      {showContent ? <a href={`#${postId}`}>Show less</a> : <>Show more</>}
+      Show more
     </button>
   );
-
-
-
+    
 
 
   return (
@@ -46,13 +50,15 @@ const Post = (props) => {
       <article className="post-content page-template no-image" id={postId}>
         <div className="post-content-body">
           <h2>{props.node.frontmatter.title}</h2>
-          <p>{props.node.frontmatter.description}</p>
+
           <figure className="kg-card kg-image-card">
             {media}
             <figcaption className="gatsby-resp-image-figcaption">
               {props.node.frontmatter.figcaption}
             </figcaption>
           </figure>
+
+          <p>{props.node.frontmatter.description}</p>
 
           {showContent && content}
 

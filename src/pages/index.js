@@ -19,7 +19,7 @@ const indexQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(home)/.*md$/" } }
-      sort: { fields: frontmatter___position, order: ASC }
+      sort: { frontmatter: { position: ASC } }
     ) {
       edges {
         node {
@@ -65,7 +65,6 @@ const BlogIndex = ({location}) => {
           `music`,
         ]}
       />
-      {/* <Bio /> */}
       {data.site.siteMetadata.description && (
         <header className="page-head">
           <h2>

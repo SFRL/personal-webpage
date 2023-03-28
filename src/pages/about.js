@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery} from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -21,9 +21,11 @@ const indexQuery = graphql`
         email
         picture {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              layout: CONSTRAINED
+              width: 300
+              placeholder: BLURRED
+            )
           }
         }
       }
@@ -41,13 +43,11 @@ const AboutPage = () => {
 
       <article className="post-content page-template no-image">
         <div className="post-content-body">
-          <Img
-            fluid={
-              data.markdownRemark.frontmatter.picture.childImageSharp.fluid
-            }
+          <GatsbyImage
+            image={data.markdownRemark.frontmatter.picture.childImageSharp.gatsbyImageData}
             alt={"Picture of the site's author"}
             className={"profile-pic"}
-          />
+            />
           <b id="about">{data.markdownRemark.frontmatter.title}</b>
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           <p>
