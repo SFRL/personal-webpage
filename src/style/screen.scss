@@ -500,16 +500,28 @@ span.site-head-logo {
   overflow: hidden;
   counter-increment: posts;
 }
-@media (max-width: 1300px) {
+@media (max-width: $large) {
   .post-card {
     height: 300px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: $medium) {
   .post-card {
     flex: 1 1 100%;
     max-width: 500px;
     height: 400px;
+  }
+}
+
+@media (max-width: $xsmall) {
+  .post-feed {
+    display: block;
+    width: 100vw;
+    margin-left: -6vw;
+  }
+  .post-card {
+    max-width: $small;
+    height: 100vw;
   }
 }
 
@@ -563,7 +575,7 @@ span.site-head-logo {
   opacity: 0;
   background: rgba(255, 255, 255, 0.3);
 }
-@media (max-width: 700px) {
+@media (max-width: $small) {
   .post-card.with-image .post-card-content {
     opacity: 1;
   }
@@ -836,7 +848,6 @@ hr {
   hr {
     margin-left: -6vw;
     width: 100vw;
-    // margin-right: -6vw;
   }
 }
 
