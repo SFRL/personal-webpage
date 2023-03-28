@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import { graphql, useStaticQuery} from "gatsby";
 
 import Layout from "../components/layout";
 import Publication from "../components/publication";
@@ -15,12 +15,35 @@ import SVGRow from "../components/svgRow";
 
 import Video from "../components/video";
 
-const ElementsPage = (props) => {
+const indexQuery = graphql`
+  query {
+    publications: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(publications)/" } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        frontmatter {
+          type
+          title
+          authors
+          date(formatString: "MMMM YYYY")
+          in
+          link
+          asset {
+            publicURL
+          }
+        }
+        id
+      }
+    }
+  }
+`;
+
+const ElementsPage = () => {
   const pageTitle = "Research";
+  const data = useStaticQuery(indexQuery);
 
-  useEffect(() => console.log(props.data));
-
-  const publications = props.data.publications.nodes.map((node) => (
+  const publications = data.publications.nodes.map((node) => (
       <Publication 
         key={node.id} 
         type={node.frontmatter.type} 
@@ -152,35 +175,4 @@ const ElementsPage = (props) => {
   );
 };
 
-const indexQuery = graphql`
-  query {
-    publications: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(publications)/" } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        frontmatter {
-          type
-          title
-          authors
-          date(formatString: "MMMM YYYY")
-          in
-          link
-          asset {
-            publicURL
-          }
-        }
-        id
-      }
-    }
-  }
-`;
-
-export default (props) => (
-  <StaticQuery
-    query={indexQuery}
-    render={(data) => (
-      <ElementsPage location={props.location} data={data} {...props} />
-    )}
-  />
-);
+export default ElementsPage;

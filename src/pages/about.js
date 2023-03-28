@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 
 import Layout from "../components/layout";
@@ -8,7 +8,21 @@ import SEO from "../components/seo";
 import "../style/normalize.css";
 import "../style/all.scss";
 
-const AboutPage = ({ data }, location) => {
+const indexQuery = graphql`
+  query {
+    profilePic: file(relativePath: { eq: "profile-pic.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+const AboutPage = () => {
+
+  const data= useStaticQuery(indexQuery);
 
   return (
     <Layout title={"About"}>
@@ -47,23 +61,4 @@ const AboutPage = ({ data }, location) => {
   );
 };
 
-const indexQuery = graphql`
-  query {
-    profilePic: file(relativePath: { eq: "profile-pic.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
-
-export default (props) => (
-  <StaticQuery
-    query={indexQuery}
-    render={(data) => (
-      <AboutPage location={props.location} data={data} {...props} />
-    )}
-  />
-);
+export default AboutPage;
