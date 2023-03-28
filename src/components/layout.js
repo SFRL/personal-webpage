@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// library.add(fas);
 
 const indexQuery = graphql`
   query {
@@ -19,6 +18,25 @@ const indexQuery = graphql`
     }
   }
 `;
+
+const navItems = [
+  {
+    name: "Research",
+    link: "/research",
+  },
+  {
+    name: "Projects",
+    link: "/projects",
+  },
+  {
+    name: "Music",
+    link: "/music",
+  },
+  {
+    name: "About",
+    link: "/about",
+  }
+];
 
 const Layout = (props) => {
   const data = useStaticQuery(indexQuery);
@@ -51,11 +69,12 @@ const Layout = (props) => {
           </button>
           <nav id="swup" className="site-head-left">
             <div className="social-links">
-              <Link to={`/`} state={{ typedCompleted: true }}>
-                Home
-              </Link>
-
-              <Link to={`/about`}>About</Link>
+              {navItems.map((item) => (
+                item.name != title ? (
+                <Link to={item.link} state={{ typedCompleted: true }}>
+                  {item.name}
+                </Link> ) : undefined
+              ))}
             </div>
           </nav>
           <div className="site-head-center">
@@ -66,7 +85,9 @@ const Layout = (props) => {
             >
               {data.site.siteMetadata.title}
             </Link>
-            {title ? <span className="site-head-logo">{title}</span> : undefined}
+            {title ? (
+              <span className="site-head-logo">{title}</span>
+            ) : undefined}
           </div>
 
           <div className="site-head-right ">
