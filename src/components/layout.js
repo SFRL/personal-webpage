@@ -6,6 +6,7 @@ import {
   faTwitter,
   faSoundcloud,
 } from "@fortawesome/free-brands-svg-icons";
+import Typing from "../components/typing";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -51,9 +52,7 @@ const Layout = (props) => {
         <div className="site-head-container">
           <button
             className="nav-burger"
-            // to={`/#menu`}
             onClick={() => setToggleNav(!toggleNav)}
-            // state={{ typedCompleted: true }}
           >
             <div
               className="hamburger hamburger--collapse"
@@ -86,7 +85,9 @@ const Layout = (props) => {
               {data.site.siteMetadata.title}
             </Link>
             {title ? (
-              <span className="site-head-logo">{title}</span>
+              <span className="site-head-logo">
+                <Typing words={[title]}/>
+              </span>
             ) : undefined}
           </div>
 

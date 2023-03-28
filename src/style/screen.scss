@@ -409,6 +409,12 @@ span.site-head-logo {
   span.site-head-logo {
     border-top: $color-body-font 2px solid;
   }
+  // Add space so that text is centered with typing effect
+  span.site-head-logo:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+  }
   .site-head-right {
     order: 3;
     width: 100%;
