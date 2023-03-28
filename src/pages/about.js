@@ -9,10 +9,9 @@ import "../style/normalize.css";
 import "../style/all.scss";
 
 const AboutPage = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title + " | About";
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={"About"}>
       <SEO title="About" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       <article className="post-content page-template no-image">
@@ -50,11 +49,6 @@ const AboutPage = ({ data }, location) => {
 
 const indexQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     profilePic: file(relativePath: { eq: "profile-pic.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {

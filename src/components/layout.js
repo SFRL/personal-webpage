@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import {graphql, useStaticQuery, Link } from "gatsby";
 import {
   faGithub,
   faLinkedin,
@@ -10,7 +10,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // library.add(fas);
 
+const indexQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 const Layout = (props) => {
+  const data = useStaticQuery(indexQuery);
   const { title, children } = props;
   const [toggleNav, setToggleNav] = React.useState(false);
   return (
@@ -53,8 +64,9 @@ const Layout = (props) => {
               className="site-head-logo"
               state={{ typedCompleted: true }}
             >
-              {title}
+              {data.site.siteMetadata.title}
             </Link>
+            {title ? <span className="site-head-logo">{title}</span> : undefined}
           </div>
 
           <div className="site-head-right ">

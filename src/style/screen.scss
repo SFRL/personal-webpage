@@ -238,13 +238,14 @@ body {
 .site-head-center {
   // position: absolute;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
 .site-head-logo {
   flex-shrink: 0;
   display: block;
-  // padding: 10px;
+  padding: 0 10px;
   color: $color-body-font;
   font-size: 2.1rem;
   line-height: 1em;
@@ -258,16 +259,14 @@ body {
   }
 }
 
-@media (max-width: 500px) {
-  .site-head-logo {
-    font-size: 1.5rem;
+@media (min-width: $medium) {
+  span.site-head-logo {
+      border-left: $color-body-font 2px solid;
   }
 }
 
-@media (max-width: 350px) {
-  .site-head-logo {
-    font-size: 1rem;
-  }
+span.site-head-logo {
+  display: block;
 }
 
 .site-head-logo:hover {
@@ -339,7 +338,7 @@ body {
   color: 0;
 }
 
-@media (max-width: 850px) {
+@media (max-width: $medium) {
   .site-head {
     padding: 0;
   }
@@ -351,7 +350,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 12px;
-    height: 40px;
+    height: 7em;
     background: rgba(255, 255, 255, 0);
     z-index: -1;
     transition: all 0.4s ease-out;
@@ -397,12 +396,18 @@ body {
     margin-top: 4vw;
   }
   .site-head-center {
+    flex-direction: column;
     order: 1;
-    position: static;
-    z-index: auto;
     display: flex;
-    justify-content: left;
-    // width: 186px;
+    justify-content: center;
+  }
+  .site-head-logo {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+  span.site-head-logo {
+    border-top: $color-body-font 2px solid;
   }
   .site-head-right {
     order: 3;
@@ -458,6 +463,13 @@ body {
     display: none;
   }
 }
+
+@media (max-width: $small) {
+  .site-head-logo {
+    font-size: 1.2em;
+  }
+}
+
 
 /* Post Feed
 /* ---------------------------------------------------------- */

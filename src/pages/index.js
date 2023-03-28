@@ -12,7 +12,6 @@ import "../style/normalize.css";
 import "../style/all.scss";
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ location, data }) => {
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
   const typedWords = data.site.siteMetadata.description;
   const typedCompleted = location.state
@@ -22,7 +21,7 @@ const BlogIndex = ({ location, data }) => {
   let postCounter = 0;
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={""}>
       <SEO
         title="Home"
         keywords={[
@@ -65,7 +64,6 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
         description
       }
     }

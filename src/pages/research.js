@@ -16,7 +16,7 @@ import SVGRow from "../components/svgRow";
 import Video from "../components/video";
 
 const ElementsPage = (props) => {
-  const siteTitle = props.data.site.siteMetadata.title + " | Research";
+  const pageTitle = "Research";
 
   useEffect(() => console.log(props.data));
 
@@ -34,7 +34,7 @@ const ElementsPage = (props) => {
   ));
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={pageTitle}>
       <SEO title="Research" />
 
       <article className="post-content page-template no-image">
@@ -154,11 +154,6 @@ const ElementsPage = (props) => {
 
 const indexQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     publications: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(publications)/" } }
       sort: { fields: frontmatter___date, order: DESC }

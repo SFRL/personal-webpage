@@ -13,10 +13,9 @@ const PortfolioTemplate = (props) => {
 
   const data = props.data;
   const title = capitalise(props.pageContext.title);
-  const siteTitle = data.site.siteMetadata.title + " | " + title;
   const posts = data.allMarkdownRemark.edges;
   return (
-    <Layout title={siteTitle}>
+    <Layout title={title}>
       <SEO title={title} />
       {posts.map(({ node }) => {
         return <Post key={node.fields.slug} node={node} />;
