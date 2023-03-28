@@ -831,6 +831,14 @@ hr {
   max-width: 800px;
   margin: 5rem auto;
 }
+// make full width on mobile
+@media (max-width: $small) {
+  hr {
+    margin-left: -6vw;
+    width: 100vw;
+    // margin-right: -6vw;
+  }
+}
 
 .footnotes-sep {
   margin-bottom: 30px;

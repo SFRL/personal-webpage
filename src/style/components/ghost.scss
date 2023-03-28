@@ -5,6 +5,21 @@
     margin-bottom: 2rem;
 }
 
+// make full width for mobile 
+@media (max-width: $small) {
+    .kg-card {
+        margin-left: -6vw;
+        margin-right: -6vw;
+    }
+    .gatsby-resp-image-figure {
+        margin-left: -6vw;
+        margin-right: -6vw;
+    }
+    .gatsby-resp-iframe-wrapper {
+        margin-left: -6vw !important;
+        margin-right: -6vw !important;
+    }
+}
 .kg-embed-card {
     display: flex;
     flex-direction: column;

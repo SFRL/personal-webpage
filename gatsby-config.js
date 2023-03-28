@@ -70,7 +70,7 @@ module.exports = {
               withWebp: true,
               showCaptions: true,
               quality: 75,
-              wrapperStyle: `margin: 2em 0;`,
+              wrapperStyle: `margin-top: 2em; margin-bottom: 2em;`,
             },
           },
           {
