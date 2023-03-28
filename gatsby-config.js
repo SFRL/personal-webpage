@@ -1,4 +1,7 @@
-const urljoin = require("url-join");
+// import urlJoin from "url-join";
+
+// const urljoin = require("url-join");
+// const urlJoin = import("url-join");
 const siteConfig = require("./siteConfig");
 
 module.exports = {
@@ -6,7 +9,7 @@ module.exports = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl: siteConfig.url + siteConfig.prefix,
     social: {
       twitter: siteConfig.twitter,
     },
@@ -102,7 +105,6 @@ module.exports = {
         purgeOnly: ["components/", "/main.css", "bootstrap/"], // Purge only these files/folders
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 
@@ -34,8 +34,6 @@ const indexQuery = graphql`
 const AboutPage = () => {
 
   const data= useStaticQuery(indexQuery);
-
-  useEffect(() => console.log(data));
 
   return (
     <Layout title={"About"}>

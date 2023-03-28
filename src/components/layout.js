@@ -39,6 +39,29 @@ const navItems = [
   }
 ];
 
+const socialItems = [
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/sebastianlobbers/",
+    icon: faLinkedin,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/9SFRL2",
+    icon: faTwitter,
+  },
+  {
+    name: "Github",
+    link: "https://github.com/SFRL",
+    icon: faGithub,
+  },
+  {
+    name: "Soundcloud",
+    link: "https://soundcloud.com/sebastian-l-bbers",
+    icon: faSoundcloud,
+  },
+];
+
 const Layout = (props) => {
   const data = useStaticQuery(indexQuery);
   const { title, children } = props;
@@ -69,8 +92,8 @@ const Layout = (props) => {
           <nav id="swup" className="site-head-left">
             <div className="social-links">
               {navItems.map((item) => (
-                item.name != title ? (
-                <Link to={item.link} state={{ typedCompleted: true }}>
+                item.name !== title ? (
+                <Link key={item.name} to={item.link} state={{ typedCompleted: true }}>
                   {item.name}
                 </Link> ) : undefined
               ))}
@@ -93,39 +116,17 @@ const Layout = (props) => {
 
           <div className="site-head-right ">
             <div className="social-links">
-              <a
-                href="https://www.linkedin.com/in/sebastianlobbers/"
-                title="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a
-                href="https://twitter.com/9SFRL2"
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                href="https://soundcloud.com/sebastian-l-bbers"
-                title="soundcloud"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faSoundcloud} />
-              </a>
-
-              <a
-                href="https://github.com/SFRL"
-                title="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
+              {socialItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.link}
+                  title={item.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={item.icon} />
+                </a>
+              ))}
             </div>
           </div>
         </div>

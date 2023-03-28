@@ -609,7 +609,7 @@ const arrow = (
   </svg>
 );
 
-export default {
+const svgs = {
   dials: dials,
   faders: faders,
   badSpeaker: badSpeaker,
@@ -620,4 +620,6 @@ export default {
   sketches: sketches,
   computer: computer,
   goodSpeaker: goodSpeaker,
-};
+}
+
+export default svgs;

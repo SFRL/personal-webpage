@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Tags from "./tag";
 import CutoutText from "./cutout.js";
 
-export default (props) => (
+const PostCard = (props) => (
   <article
     className={`post-card ${props.postClass} ${
       props.node.frontmatter.thumbnail ? `with-image` : `no-image`
@@ -21,6 +21,8 @@ export default (props) => (
     )}
   </article>
 );
+
+export default PostCard;
 
 class ContentNoImage extends Component {
   render() {
