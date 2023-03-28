@@ -33,11 +33,7 @@ const Post = (props) => {
 
   const button = (
     <button onClick={() => setShowContent(!showContent)} className="button">
-      {showContent ? (
-        <a href={`#${postId}`}>Show less</a>
-      ) : (
-        <a href={`#${postId}`}>Show more</a>
-      )}
+      {showContent ? <a href={`#${postId}`}>Show less</a> : <>Show more</>}
     </button>
   );
 
