@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import Post from "../components/post";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import "../style/normalize.css";
 import "../style/all.scss";
@@ -16,7 +16,7 @@ const PortfolioTemplate = (props) => {
   const posts = data.allMarkdownRemark.edges;
   return (
     <Layout title={title}>
-      <SEO title={title} />
+      <Seo title={title} />
       {posts.map(({ node }) => {
         return <Post key={node.fields.slug} node={node} />;
       })}

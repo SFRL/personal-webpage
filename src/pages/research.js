@@ -3,7 +3,7 @@ import { graphql, useStaticQuery} from "gatsby";
 
 import Layout from "../components/layout";
 import Publication from "../components/publication";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import "../style/normalize.css";
 import "../style/all.scss";
@@ -58,7 +58,7 @@ const ElementsPage = () => {
 
   return (
     <Layout title={pageTitle}>
-      <SEO title="Research" />
+      <Seo title="Research" />
 
       <article className="post-content page-template no-image">
         <div className="post-content-body">

@@ -2,8 +2,7 @@ import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
-// import Bio from "../components/bio"
+import Seo from "../components/seo";
 import PostCard from "../components/postCard";
 
 import Typing from "../components/typing"; // Typing animation for page intro
@@ -22,7 +21,7 @@ const BlogIndex = ({ location, data }) => {
 
   return (
     <Layout title={""}>
-      <SEO
+      <Seo
         title="Home"
         keywords={[
           `portfolio`,
