@@ -1,7 +1,9 @@
 ---
 title: "Hi I am Sebastian"
 picture: "profile-pic.jpg"
-email: "s.lobbers[at]qmul.ac.uk"
+email: "s.lobbers@qmul.ac.uk"
+linkedin: "sebastianlobbers"
+twitter: "@9SFRL2"
 ---
 
 I am passionate about working on **human-centred projects** that involve novel technology, data-driven research and multi-disciplinary collaboration. My main occupation is a UKRI funded **PhD** at

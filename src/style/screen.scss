@@ -516,8 +516,9 @@ span.site-head-logo {
 @media (max-width: $xsmall) {
   .post-feed {
     display: block;
-    width: 100vw;
-    margin-left: -6vw;
+    // add 1px to make lines disappear on mobile
+    width: calc(100vw + 1px); 
+    margin-left: calc(-6vw - 2px);
   }
   .post-card {
     max-width: $small;
@@ -879,9 +880,19 @@ hr {
   float: left;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  margin: 0 1rem 1rem 0;
-  shape-outside: margin-box;
+  // border-radius: 50%;
+  margin-right: 2rem;
+  // shape-outside: margin-box;
+}
+
+// display on top of text on mobile
+@media (max-width: $xsmall) {
+  .profile-pic {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0 0 2rem 0;
+  }
 }
 
 .author-meta {

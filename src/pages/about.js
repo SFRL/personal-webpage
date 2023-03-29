@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../style/normalize.css";
@@ -19,6 +20,8 @@ const indexQuery = graphql`
       frontmatter {
         title
         email
+        linkedin
+        twitter
         picture {
           childImageSharp {
             gatsbyImageData(
@@ -44,16 +47,47 @@ const AboutPage = () => {
       <article className="post-content page-template no-image">
         <div className="post-content-body">
           <GatsbyImage
-            image={data.markdownRemark.frontmatter.picture.childImageSharp.gatsbyImageData}
+            image={
+              data.markdownRemark.frontmatter.picture.childImageSharp
+                .gatsbyImageData
+            }
             alt={"Picture of the site's author"}
             className={"profile-pic"}
-            />
-          <b id="about">{data.markdownRemark.frontmatter.title}</b>
+          />
+          <h5 id="about" style={{ "text-align": "left" }}>
+            {data.markdownRemark.frontmatter.title}
+          </h5>
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           <p>
-            <FontAwesomeIcon icon={faEnvelope} />
-            &nbsp;
-            {data.markdownRemark.frontmatter.email}
+            <div>
+              <a href={`mailto:${data.markdownRemark.frontmatter.email}`}> 
+              <FontAwesomeIcon icon={faEnvelope} />
+              &nbsp;
+              {data.markdownRemark.frontmatter.email}
+              </a>
+            </div>
+            <div>
+              <a
+                href={`https://www.linkedin.com/in/${data.markdownRemark.frontmatter.linkedin}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+                &nbsp;
+                {data.markdownRemark.frontmatter.linkedin}
+              </a>
+            </div>
+            <div>
+              <a
+                href={`https://twitter.com/${data.markdownRemark.frontmatter.twitter}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+                &nbsp;
+                {data.markdownRemark.frontmatter.twitter}
+              </a>
+            </div>
           </p>
         </div>
       </article>
