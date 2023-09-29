@@ -14,6 +14,7 @@ module.exports = {
       twitter: siteConfig.twitter,
     },
   },
+  pathPrefix: '/personal-webpage',
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-image`,
