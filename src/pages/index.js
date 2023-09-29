@@ -18,7 +18,9 @@ const indexQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/home/.*\/index\\.md$/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/home/(music|research|projects)/index.md/" }
+      }
       sort: { frontmatter: { position: ASC } }
     ) {
       edges {
