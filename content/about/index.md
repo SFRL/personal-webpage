@@ -1,5 +1,5 @@
 ---
-title: "Hi I am Sebastian"
+title: "Hi, I am Sebastian"
 picture: "profile-pic.jpg"
 email: "s.lobbers@qmul.ac.uk"
 linkedin: "sebastianlobbers"
