@@ -1,7 +1,7 @@
 ---
 title: Unfurled
 date: "2022-07-01"
-videoSourceURL: https://player.vimeo.com/video/751640201?h=05773d586d
+videoSourceURL: https://instagram.com/p/Ciuvbg7oc4U/embed
 figcaption: Trailer for the dance performance
 description: This is a composition for electronic music and cello that I created for a dance performance. It is the third piece in a series of collaborations with choreographer Sarah Poekert.
 ---

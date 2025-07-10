@@ -1,7 +1,7 @@
 ---
 title: It just sort of happened one day...
 date: "2017-09-01"
-videoSourceURL: https://player.vimeo.com/video/334145977?h=da69784fcf
+videoSourceURL: https://www.instagram.com/p/CfWwaXto96x/embed
 figcaption: Trailer for the dance performance
 description: This is a minimal piano composition and soundscape for a dance performance choreographed by Sarah Poekert.
 ---
