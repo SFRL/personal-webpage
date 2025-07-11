@@ -1,7 +1,7 @@
 ---
 title: Half Sewn 
 date: "2022-03-01"
-videoSourceURL: https://www.instagram.com/p/CcgMdBKJ_fu/embed
+videoSourceURL: https://www.instagram.com/p/CfHKc-aICSh/embed
 figcaption: Trailer for Half Sewn
 description: The composition for this choreography takes the listener on a journey from warm, domestic sounds with female singing voices to a harsh, mechanical soundscape and back.   
 ---
