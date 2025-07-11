@@ -23,10 +23,10 @@
   "component---src-pages-about-js.js": "component---src-pages-about-js-60c727cbb8276fa9c3ec.js",
   "component---src-pages-index-js-b6383f604587551e49e4.js.map": "component---src-pages-index-js-b6383f604587551e49e4.js.map",
   "component---src-pages-index-js.js": "component---src-pages-index-js-b6383f604587551e49e4.js",
-  "component---src-pages-research-js-9f52a96d7b9dcc8d38eb.js.map": "component---src-pages-research-js-9f52a96d7b9dcc8d38eb.js.map",
-  "component---src-pages-research-js.js": "component---src-pages-research-js-9f52a96d7b9dcc8d38eb.js",
-  "component---src-templates-portfolio-js-0ff6acca2d45c56f54d0.js.map": "component---src-templates-portfolio-js-0ff6acca2d45c56f54d0.js.map",
-  "component---src-templates-portfolio-js.js": "component---src-templates-portfolio-js-0ff6acca2d45c56f54d0.js",
+  "component---src-pages-research-js-73fde9d77790ad9892bd.js.map": "component---src-pages-research-js-73fde9d77790ad9892bd.js.map",
+  "component---src-pages-research-js.js": "component---src-pages-research-js-73fde9d77790ad9892bd.js",
+  "component---src-templates-portfolio-js-c276ca16bd8f6a453a05.js.map": "component---src-templates-portfolio-js-c276ca16bd8f6a453a05.js.map",
+  "component---src-templates-portfolio-js.js": "component---src-templates-portfolio-js-c276ca16bd8f6a453a05.js",
   "framework-a825c2f3f17dede21cae.js.LICENSE.txt": "framework-a825c2f3f17dede21cae.js.LICENSE.txt",
   "framework-a825c2f3f17dede21cae.js.map": "framework-a825c2f3f17dede21cae.js.map",
   "framework.js": "framework-a825c2f3f17dede21cae.js",
@@ -131,6 +131,6 @@
   "static/nunito-latin-900italic.woff": "static/nunito-latin-900italic-02a2b409ce7bbc6e9ba9844314a5e9b7.woff",
   "static/nunito-latin-900italic.woff2": "static/nunito-latin-900italic-e3c092a3e2314146e496821b2f051abb.woff2",
   "styles.css": "styles.1cb92754eeddcd203db8.css",
-  "webpack-runtime-bba53db60c05d920156d.js.map": "webpack-runtime-bba53db60c05d920156d.js.map",
-  "webpack-runtime.js": "webpack-runtime-bba53db60c05d920156d.js"
+  "webpack-runtime-6b3a02e5c918f4f3175d.js.map": "webpack-runtime-6b3a02e5c918f4f3175d.js.map",
+  "webpack-runtime.js": "webpack-runtime-6b3a02e5c918f4f3175d.js"
 }
